@@ -8,9 +8,11 @@ node['bajt']['apache_webapps'].keys.each do |webappkey|
       puts "working on webappkey =" + webappkey + "="
       apache_webapps = node['bajt']['apache_webapps'][webappkey]
 
-      hostsEntry += "   " + "#{apache_webapps['server_name_aliases']}"
+      hostsEntry += "   " + "#{apache_webapps['server_name']}"
 		if ( ! apache_webapps['server_name_aliases'].nil? && defined?(apache_webapps['server_name_aliases']) ) then
-			hostsEntry += "   " + "#{apache_webapps['server_name_aliases']}"
+			apache_webapps['server_name_aliases'].each do |a|
+				hostsEntry += "   #{a}"
+			end
 		end
 		puts "hostsEntry =" + hostsEntry
       
@@ -66,6 +68,7 @@ node['bajt']['apache_webapps'].keys.each do |webappkey|
 end
 
 ###  Add all hosts to one host file entry  ###
+puts "ADD hostsEntry =" + hostsEntry + "="
 hostsfile_entry "#{node['ipaddress']}" do
   hostname hostsEntry
   action :create
