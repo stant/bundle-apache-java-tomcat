@@ -1,0 +1,2 @@
+berks install --without loc
+
