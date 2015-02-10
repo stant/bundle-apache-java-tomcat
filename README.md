@@ -67,7 +67,7 @@ Include `bundle-apache-java-tomcat` in your node's `run_list`:
 
 ### kitchen converge will:
 
-create 2 apache web sites and 1 tomcat web site as the host names above.
+create 2 apache web sites and 1 tomcat web site at the host names above.
 
 ## License and Authors
 
