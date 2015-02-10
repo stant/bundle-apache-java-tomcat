@@ -1,10 +1,10 @@
 # bundle-apache-java-tomcat-cookbook
 
-TODO: Enter the cookbook description here.
+The purpose I was aiming for was to create an easy way to install a common bundle of software. In this case I also aim to make it easy to install multiple web sites via a simple list of parameters with web site files to install.
 
 ## Supported Platforms
 
-TODO: List your supported platforms.
+Chef supported linuxes.
 
 ## Attributes
 
@@ -16,10 +16,34 @@ TODO: List your supported platforms.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['bundle-apache-java-tomcat']['bacon']</tt></td>
+    <td><tt>['bajt']['apache']['create_demo_index_htmls']</tt></td>
     <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td>If true, this will create simple ['bajt']['apache']['docroot']/index.html pages for each web site created.</td>
+    <td><tt>false</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['bajt']['apache']['docroot']</tt></td>
+    <td>String</td>
+    <td>main root path to apache doc files.</td>
+    <td><tt>/var/www</tt></td>
+  </tr>
+  <tr>
+    <td><tt>attributes for project svanzoest/apache2-cookbook</tt></td>
+    <td>&nbsp;</td>
+    <td>see: <a href="cookbook">apache</a></td>
+    <td><tt></tt></td>
+  </tr>
+  <tr>
+    <td><tt>attributes for project agileorbit-cookbooks/java</tt></td>
+    <td>&nbsp;</td>
+    <td>see: <a href="https://github.com/agileorbit-cookbooks/java">java</a></td>
+    <td><tt></tt></td>
+  </tr>
+  <tr>
+    <td><tt>attributes for project opscode-cookbooks/tomcat</tt></td>
+    <td>&nbsp;</td>
+    <td>see: <a href="https://github.com/opscode-cookbooks/tomcat">tomcat</a></td>
+    <td><tt></tt></td>
   </tr>
 </table>
 
