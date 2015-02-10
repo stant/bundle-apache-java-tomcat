@@ -65,6 +65,34 @@ Include `bundle-apache-java-tomcat` in your node's `run_list`:
 
 33.33.33.13   bundle-apache-java-tomcat.webapp1.com  bundle-apache-java-tomcat.webapp2.com  bundle-apache-java-tomcat.webapp3.com
 
+### default apache and tomcat web site parameters in attributes/webapps.rb
+
+```json
+default['bajt']['apache_webapps'] =
+						{
+						 "webapp_1" => { "name" => "webapp_1",
+									  "server_name" => "bundle-apache-java-tomcat.webapp1.com",
+									  "server_name_aliases" => ["webapp1.com"],
+									  "template" => 'webapp.conf.erb',
+									  "listen_ports" => '80',
+									  "src_url" => 'http://10.0.2.2:81/website1.zip',
+						 			},
+						  "webapp_2" => { "name" => "webapp_2",
+									  "server_name" => "bundle-apache-java-tomcat.webapp2.com",
+									  "server_name_aliases" => nil,
+									  "template" => 'webapp.conf.erb',
+									  "src_url" => 'http://10.0.2.2:81/website2.zip'
+									},
+						 "webapp_3" => { "name" => "webapp_3",
+									  "server_name" => "bundle-apache-java-tomcat.webapp3.com",
+									  "server_name_aliases" => ["webapp3.com"],
+									  "template" => 'webapp.conf.erb',
+									  "set_reverse_proxypass_at_url" => 'http://bundle-apache-java-tomcat.webapp3.com:8080/sample',
+									  "set_reverse_proxypassreverse_at_url" => 'http://bundle-apache-java-tomcat.webapp3.com/'
+						 			}
+					   }
+```
+
 ### kitchen converge will:
 
 create 2 apache web sites and 1 tomcat web site at the host names above.
