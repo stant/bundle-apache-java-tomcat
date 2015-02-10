@@ -30,7 +30,7 @@ Chef supported linuxes.
   <tr>
     <td><tt>attributes for project svanzoest/apache2-cookbook</tt></td>
     <td>&nbsp;</td>
-    <td>see: <a href="cookbook">apache</a></td>
+    <td>see: <a href="https://github.com/svanzoest/apache2-cookbook">apache</a></td>
     <td><tt></tt></td>
   </tr>
   <tr>
