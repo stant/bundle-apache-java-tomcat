@@ -61,6 +61,12 @@ Include `bundle-apache-java-tomcat` in your node's `run_list`:
 }
 ```
 
+### add to your hosts files
+
+33.33.33.13   bundle-apache-java-tomcat.webapp1.com  bundle-apache-java-tomcat.webapp2.com  bundle-apache-java-tomcat.webapp3.com
+
+kitchen converge will create 2 apache web sites and 1 tomcat web site as the host names above.
+
 ## License and Authors
 
 Author:: Stan Towianski (<stashu.pub@gmail.com>)
